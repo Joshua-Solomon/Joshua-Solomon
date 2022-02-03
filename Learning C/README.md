@@ -1,1 +1,2 @@
-Programs I wrote to learn C
+What I've learned:
+-scanf vs fgets
