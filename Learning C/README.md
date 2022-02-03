@@ -1,1 +1,1 @@
-Programs I written to learn C
+Programs I wrote to learn C
