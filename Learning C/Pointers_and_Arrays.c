@@ -2,6 +2,25 @@
 #include<stdlib.h>
 #include<string.h>
 
+/*Sample Output:
+
+Using pointer arithmetic to get the length of an array...
+length of array = 12
+
+------------------------------------
+
+Contains function:
+Test #1: The string "Hello" contains the character 'e'
+Test #2: The string "Hello" does not contain the character 'x'
+
+------------------------------------
+
+Making a pointer to an integer array...
+Here's that array: 1 2 3 4 5 6 7 8 9 10
+
+------------------------------------
+*/
+
 void array_to_ptr () {
     char str[ ] = "Hello World!";
     int length = 0;
