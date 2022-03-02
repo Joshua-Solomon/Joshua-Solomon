@@ -9,3 +9,5 @@ public class Archer extends GameCharacter {
 		super.character_action = name;
 	}
 }
+
+/*Sample Output in Game.java*/
