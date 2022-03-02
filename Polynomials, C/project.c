@@ -5,6 +5,16 @@
 #include"basiclist.h"
 #include"polynomial.h"
 
+/*Sample Output:
+Testing term.c/h:
+testterm1: 1
+testterm2: 2x
+testterm3: 3x^2
+
+Testing polynomial.c/h :
+Original: 2 + 5x^3 + 3x + 0 + 4x + 3x + 5x^2 + 3x^3 + 5x^2
+*/
+
 int main() {
     term_t testterm1 = {1, 'x', 0};
     term_t testterm2 = {2, 'x', 1};
@@ -38,13 +48,11 @@ int main() {
     printf("\nTesting polynomial.c/h : \n");
     printf("Original: ");
     print_polynomial(poly1);
-    // poly2 = combine_like_terms(poly1);
-    // printf("\nCombined: : ");
-    // print_polynomial(poly2);
-    // printf("\nNAME: Scotty Solomon :o\n");
     
     return 0;
 }
+
+/*string_to_term and read_terms_from_file were not written by me*/
 
 /* Parses a string into a term data structure */
 term_t * string_to_term(char * buff) {
