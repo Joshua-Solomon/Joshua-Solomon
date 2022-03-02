@@ -3,6 +3,9 @@ package projects.project2game.characters;
 import java.util.Random;
 
 abstract public class GameCharacter {
+	
+	/*Sample Output in Game.java*/
+	
 	protected int current_health, current_strength;
 	protected final int TOTAL_HEALTH = 20;
 	protected final int TOTAL_STRENGTH = 15;
