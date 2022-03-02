@@ -8,3 +8,5 @@ public class Brawler extends GameCharacter {
 		super.character_action = name;
 	}	
 }
+
+/*Sample Output in Game.java*/
