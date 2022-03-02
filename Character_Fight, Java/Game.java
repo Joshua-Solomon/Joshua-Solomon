@@ -30,12 +30,11 @@ public class Game {
 		while(Link.is_alive() && Mario.is_alive()) {
 		System.out.println("Round: " + round + Link.statsForGame() + Mario.statsForGame());
 		
-		//alternates which character attacks first
+		/*Alternates which character attacks first*/
 		if(round % 2 > 0) {
 			System.out.println(Mario.attack(Link));
 			if(!Link.is_alive()) {
 				break;
-				//don't want the while loop to continue if Link is dead
 			}
 			System.out.println(Link.attack(Mario));
 			round += 1;
