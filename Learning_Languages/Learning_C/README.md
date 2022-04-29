@@ -1,1 +1,1 @@
-I first started learning C with a Java background and it was definetly an intresting shift. Pointers through me for a loop (or sometimes, a crashed program), but ovetime I started to appreciate how much control you have with memory.
+I first started learning C with a Java background and it was definetly an intresting shift. Pointers through me for a loop (or sometimes, a crashed program), but ovetime I started to appreciate how much control you have with memory. This folder is mostly just some very small programs I created when learning C. Think strings, pointers, structs.
