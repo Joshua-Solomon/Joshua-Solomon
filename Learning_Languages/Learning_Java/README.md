@@ -1,4 +1,1 @@
-What I've learned <br />
-  -Recursion <br />
-  -Polymorphism <br />
-  -Inheritance <br />
+Java was the first language I learned so I think it'll probably always be my favorite language. When I took my first data structure class it was exclusivley in Java, which meant I ended up writing implementing my own queues and lists in Java.
