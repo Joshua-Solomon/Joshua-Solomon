@@ -1,1 +1,1 @@
-I am still in the process of learning Scheme. Functional program is definetly an intresting approach to problem solving, though I must admit that I am not as proficient with Scheme as I am with other languages.
+I am still in the process of learning Scheme. Functional program is definetly an intresting approach to problem solving, though I must admit that at the moment, it is not my favorite.
