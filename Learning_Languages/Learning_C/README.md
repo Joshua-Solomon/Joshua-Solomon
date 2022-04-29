@@ -1,5 +1,1 @@
-Some smaller programs I made while learning C. <br />
-What I've learned: <br />
-  -Pointers/pointer indexing <br />
-  -sprintf <br />
-  -Control Sequences <br />
+I first started learning C with a Java background and it was definetly an intresting shift. Pointers through me for a loop (or sometimes, a crashed program), but ovetime I started to appreciate how much control you have with memory.
