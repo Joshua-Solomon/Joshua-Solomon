@@ -8,6 +8,23 @@
 
 using namespace std;
 #define BUFFERLEN 100
+/* Sample Output: 
+Scotty's Output
+
+Testing term.cpp/hpp:
+testterm1: 1
+testterm2: 2x
+testterm3: 3x^2
+
+Testing basic polynomial functions: Adding terms & testing print_poly
+1 + 2x + 3x^2
+
+Testing polynomial.cpp/hpp :
+Original: : 2 + 5x^3 + 3x + 0 + 4x + 3x + 5x^2 + 3x^3 + 5x^2
+Combined: : 2 + 10X + 10X^2 + 8X^3
+
+End Output
+*/
 
 Term term_from_string(string buffer) {
 
