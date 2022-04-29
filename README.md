@@ -1,2 +1,2 @@
-# Portfolio
-Most programs were largely made with the goal of learning certain skills, rather than be efficient as possible (i.e., practicing recursion, even if an iterative solution is more efficient).  Unlesss otherwise noted at the top of a file, all code was written by me.
+# Joshua Solomon
+Hello, thank you for coming to look at my gitbhub page! Currently, I'm most fluent in Java, C, and C++, but I've also been learning Prolog and Scheme. I am mostly a fan of object-oriented programming, but Prolog has been winning me over with its logic.
