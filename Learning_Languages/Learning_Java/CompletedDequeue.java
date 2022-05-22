@@ -89,14 +89,9 @@ public class CompletedDeque<Item> implements Deque<Item> {
 			head = tail = temp;
 		}
 		else {
-			try {
 			tail.setNext(temp);
 			temp.setPrevious(tail);
 			tail = temp;
-			}
-			catch(Exception e) {
-				System.out.println("EndqueueBack issue");
-			}
 		}
 		n++;
 	}
