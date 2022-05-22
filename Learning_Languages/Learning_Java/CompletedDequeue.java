@@ -36,26 +36,13 @@ empty
 Size: 0
 
 Testing dequeBack() exception...
-java.util.NoSuchElementException: deque
+java.util.NoSuchElementException: Tried to remove from empty queue
 Success!
 Testing dequeFront() exception...
 java.util.NoSuchElementException: Tried to remove from empty queue
 Success!
 
-Running class examples...
-size: 3
-contents:
-8 9 4 
-4
-8
-9
-1
-11
-size: 2
-contents:
-1 11 
-
-Trying to find bugs...
+Trying to find any remaining bugs...
 contents:
 1 1 1 1 1 
 Removing all...
@@ -127,13 +114,9 @@ public class CompletedDeque<Item> implements Deque<Item> {
 			head = tail;
 		}
 		else {
-			try {
 			head = head.getNext();
 			head.setPrevious(null);
-			}
-			catch(Exception e) {
-				System.out.println("DequeueFront issue");
-			}
+			System.out.println("DequeueFront issue");
 		}
 		
 		n--;
@@ -148,7 +131,7 @@ public class CompletedDeque<Item> implements Deque<Item> {
 	@Override
 	public Item dequeueBack() throws NoSuchElementException {
 		if(isEmpty()) {
-			throw new NoSuchElementException("deque");
+			throw new NoSuchElementException("Tried to remove from empty queue");
 		}
 		
 		Item result = tail.getElement();
@@ -173,7 +156,7 @@ public class CompletedDeque<Item> implements Deque<Item> {
 	@Override
 	public Item first() throws NoSuchElementException {
 		if(isEmpty()) {
-			throw new NoSuchElementException("Deque");
+			throw new NoSuchElementException("The queue was already empty");
 		}
 		return head.getElement();
 	}
@@ -181,7 +164,7 @@ public class CompletedDeque<Item> implements Deque<Item> {
 	@Override
 	public Item last() throws NoSuchElementException {
 		if(isEmpty()) {
-			throw new NoSuchElementException("Deque");
+			throw new NoSuchElementException("The queue was already empty");
 		}
 		
 		return tail.getElement();
@@ -306,15 +289,15 @@ public class CompletedDeque<Item> implements Deque<Item> {
 	   	d1.dequeueBack();
 	   	d1.dequeueBack();
 	   	System.out.println(d1.toString());
-	    System.out.println("Size: " + d1.size());
+	   	System.out.println("Size: " + d1.size());
 	      
 
-	    System.out.println("\nRemoving elements to test errors...");
-	    d1.dequeueBack();
-	    System.out.println(d1.toString());
-	    System.out.println("Size: " + d1.size());
+	    	System.out.println("\nRemoving elements to test errors...");
+	    	d1.dequeueBack();
+	    	System.out.println(d1.toString());
+	    	System.out.println("Size: " + d1.size());
 		      
-	    d1.dequeueBack();
+	    	d1.dequeueBack();
 	  	System.out.println(d1.toString());
 		System.out.println("Size: " + d1.size());
 		      
@@ -354,56 +337,28 @@ public class CompletedDeque<Item> implements Deque<Item> {
 		}
 		
 		
-		System.out.println("\nRunning class examples...");
 		
-		CompletedDeque<Integer> deque = new CompletedDeque<>();
+        
+        	System.out.println("\nTrying to any other find bugs...");
+		CompletedDeque<Integer> debug = new CompletedDeque<Integer>();
+		debug.enqueueFront(1);
+		debug.enqueueFront(1);
+		debug.enqueueFront(1);
+		debug.enqueueFront(1);
+		debug.enqueueFront(1);
+		System.out.println("contents:\n" + debug.toString()); 
+        
+		System.out.println("Removing all...");
+		debug.dequeueBack();
+		debug.dequeueBack();
+		debug.dequeueBack();
+		debug.dequeueBack();
+		debug.dequeueBack();
+		System.out.println("contents:\n" + debug.toString());
 
-        //standard queue behavior
-        deque.enqueueBack(3);
-        deque.enqueueBack(7);
-        deque.enqueueBack(4);
-        deque.dequeueFront();        
-        deque.enqueueBack(9);
-        deque.enqueueBack(8);
-        deque.dequeueFront();
-        System.out.println("size: " + deque.size());
-        System.out.println("contents:\n" + deque.toString());   
-
-        //deque features
-        System.out.println(deque.dequeueFront());        
-        deque.enqueueFront(1);
-        deque.enqueueFront(11);                         
-        deque.enqueueFront(3);                 
-        deque.enqueueFront(5);         
-        System.out.println(deque.dequeueBack());
-        System.out.println(deque.dequeueBack());        
-        System.out.println(deque.last());                
-        deque.dequeueFront();
-        deque.dequeueFront();        
-        System.out.println(deque.first());        
-        System.out.println("size: " + deque.size());
-        System.out.println("contents:\n" + deque.toString()); 
-        
-        System.out.println("\nTrying to find bugs...");
-        CompletedDeque<Integer> debug = new CompletedDeque<Integer>();
-        debug.enqueueFront(1);
-        debug.enqueueFront(1);
-        debug.enqueueFront(1);
-        debug.enqueueFront(1);
-        debug.enqueueFront(1);
-        System.out.println("contents:\n" + debug.toString()); 
-        
-        System.out.println("Removing all...");
-        debug.dequeueBack();
-        debug.dequeueBack();
-        debug.dequeueBack();
-        debug.dequeueBack();
-        debug.dequeueBack();
-        System.out.println("contents:\n" + debug.toString());
-        
-        System.out.println("\nTesting Extreme Cases");
-        debug.enqueueBack(null);
-        debug.enqueueFront(debug.first());
-        System.out.println("contents:\n" + debug.toString());
-	}
+		System.out.println("\nTesting Extreme Cases");
+		debug.enqueueBack(null);
+		debug.enqueueFront(debug.first());
+		System.out.println("contents:\n" + debug.toString());
+		}
 } 
