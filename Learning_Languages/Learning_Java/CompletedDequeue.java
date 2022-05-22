@@ -42,16 +42,17 @@ Testing dequeFront() exception...
 java.util.NoSuchElementException: Tried to remove from empty queue
 Success!
 
-Trying to find any remaining bugs...
+Trying to find bugs...
 contents:
-1 1 1 1 1 
+1 2 3 4 5 
 Removing all...
 contents:
 empty
-contents:
-empty
 
-Testing Extreme Cases
+Addding a null element...
+contents:
+null 
+Using first() to duplicate the first element...
 contents:
 null null 
 */
@@ -89,9 +90,14 @@ public class CompletedDeque<Item> implements Deque<Item> {
 			head = tail = temp;
 		}
 		else {
+			try {
 			tail.setNext(temp);
 			temp.setPrevious(tail);
 			tail = temp;
+			}
+			catch(Exception e) {
+				System.out.println("EndqueueBack issue");
+			}
 		}
 		n++;
 	}
@@ -350,10 +356,13 @@ public class CompletedDeque<Item> implements Deque<Item> {
 		debug.dequeueBack();
 		debug.dequeueBack();
 		System.out.println("contents:\n" + debug.toString());
-
-		System.out.println("\nTesting Extreme Cases");
-		debug.enqueueBack(null);
-		debug.enqueueFront(debug.first());
-		System.out.println("contents:\n" + debug.toString());
-		}
+		
+		System.out.println("\nAddding a null element...");
+        	debug.enqueueBack(null);
+       	 	System.out.println("contents:\n" + debug.toString());
+        
+        	System.out.println("Using first() to duplicate the first element...");
+        	debug.enqueueFront(debug.first());
+        	System.out.println("contents:\n" + debug.toString());
+	}
 } 
